@@ -1,0 +1,81 @@
+<div class="login-registration-con">
+  <mat-card class="mat-card-container">
+    <!-- for Login  -->
+    <div class="login-form-container" *ngIf="showCon === 'login'">
+      <div class="container-center">
+        <h2>{{'login' | uppercase}}</h2>
+      </div>
+      <!-- userName input  -->
+      <form class="example-form" [formGroup]="loginFormControl">
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="userName" placeholder="Username">
+        </mat-form-field>
+        <!-- Password input  -->
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="text" matInput formControlName="password" placeholder="Password">
+        </mat-form-field>
+        <!-- Login Button  -->
+        <div class="container-center">
+          <button [disabled]="loginFormControl.invalid" mat-raised-button color="primary"
+            (click)="login()">{{"Login"|uppercase}}</button>
+        </div>
+        <div class="top-spacing">
+          <span>Don't have an account ?</span>
+          <button mat-flat-button (click)="switchToSignup()">{{'sign up' | uppercase}}</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- for Registration  -->
+    <div class="login-form-container" *ngIf="showCon === 'register'">
+      <div class="container-center">
+        <h2>{{'Registration' | uppercase}}</h2>
+      </div>
+      <!-- userName input  -->
+      <form class="example-form" [formGroup]="registerFormControl">
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="userName" placeholder="Username">
+        </mat-form-field>
+        <!-- First Name input  -->
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>FirstName</mat-label>
+          <input type="text" matInput formControlName="firstName" placeholder="FirstName">
+        </mat-form-field>
+
+        <!-- Last Name input  -->
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>LastName</mat-label>
+          <input type="text" matInput formControlName="lastName" placeholder="LastName">
+        </mat-form-field>
+        <!-- Last Name input  -->
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input type="number" matInput formControlName="phoneNumber" placeholder="Phone Number">
+        </mat-form-field>
+        <!-- Last Name input  -->
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput formControlName="email" placeholder="Email">
+        </mat-form-field>
+        <!-- Password input  -->
+        <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="Password">
+        </mat-form-field>
+
+        <!-- Registration Button  -->
+        <div class="container-center">
+          <button [disabled]="registerFormControl.invalid" mat-raised-button color="primary"
+            (click)="register()">{{"Register"|uppercase}}</button>
+        </div>
+        <div class="top-spacing">
+          <span>Already have an account ?</span>
+          <button mat-flat-button (click)="switchToLogin()">{{'login' | uppercase}}</button>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</div>

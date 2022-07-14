@@ -1,0 +1,19 @@
+.login-registration-con{
+height: calc(100% - 60px);
+width: 100%;
+display: flex;
+place-content: center;
+align-items: center;
+.mat-card-container{
+    width: 300px;
+    .container-center{
+      text-align: center;
+    }
+    .top-spacing{
+        margin-top: 15px;
+    }
+}
+.input-full-width{
+    width:100%;
+}
+}
